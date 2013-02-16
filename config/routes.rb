@@ -57,6 +57,10 @@ PBC2013::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   root :to => "home#index"
   resources :home
-  resources :camp
+  resources :camp do
+    collection do
+      get :entry
+    end
+  end
 
 end
