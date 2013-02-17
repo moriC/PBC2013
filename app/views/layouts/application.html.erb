@@ -13,55 +13,6 @@
   </style>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-  	<div class="container-fluid">
-	  	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	  	</button>
-	    <%= link_to 'PBC2013特設ページ', {:controller => "home", :action => "index"}, {:class => "brand"} %>
-	    <div class="nav-collapse collapse">
-        <p class="navbar-text pull-right">
-          Logged in as Username
-        </p>
-	    </div>
-    </div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span3">
-      <div class="well sidebar-nav">
-      	<ul class="nav nav-list">
-          <li><%= link_to '合宿申し込み', {:controller => "camp", :action => "entry"} %></li>
-          <li><%= link_to '合宿概要', {:controller => "camp", :action => "index"} %></li>
-      		<li>開講部門紹介</li>
-      		<ul class="nav nav-list">
-      		  <li class="nav-header">開発部門</li>
-      		    <li>プログラマコース</li>
-      		  <li class="nav-header">デザイン部門</li>
-      		    <li>Webデザインコース<li>
-      		    <li>システムデザインコース</li>
-      		  <li class="nav-header">入門部門</li>
-      		    <li>初心者コース</li>
-      		</ul>
-      	</ul>
-      </div>
-    </div>
-    <div class="span9">
-      <div class="well">
         <%= yield %>
-      </div>
-    </div>
-  </div>
-  <hr>
-  <footer>
-  	<p align="center">
-  		&copy; Programing Boot Camp 2013 All Rights Reserved
-  	</p>
-  </footer>
-</div>
 </body>
 </html>
