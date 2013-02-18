@@ -61,6 +61,7 @@ PBC2013::Application.routes.draw do
   resources :home
   resources :camp do
     collection do
+      get :about
       get :entry
     end
   end

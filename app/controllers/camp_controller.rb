@@ -1,6 +1,6 @@
 class CampController < ApplicationController
   layout 'main'
-  def index
+  def about
   end
   
   def entry
