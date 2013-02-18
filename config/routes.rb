@@ -65,5 +65,13 @@ PBC2013::Application.routes.draw do
       get :entry
     end
   end
+  resources :lecture do
+    collection do
+      get :programing
+      get :system_design
+      get :web_design
+      get :beginner
+    end
+  end
 
 end

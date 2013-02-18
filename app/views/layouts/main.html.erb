@@ -47,12 +47,12 @@
       		<li>開講部門紹介</li>
       		<ul class="nav nav-list">
       		  <li class="nav-header">開発部門</li>
-      		    <li>プログラマコース</li>
-              <li>システムデザインコース</li>
+              <li><%= link_to 'プログラマコース', {:controller => "lecture", :action => "programing"} %></li>
+              <li><%= link_to 'システムデザインコース', {:controller => "lecture", :action => "system_design"} %></li>
       		  <li class="nav-header">デザイン部門</li>
-      		    <li>Webデザインコース<li>
+              <li><%= link_to 'Webデザインコース', {:controller => "lecture", :action => "web_design"} %></li>
       		  <li class="nav-header">初心者部門</li>
-      		    <li>初心者コース</li>
+              <li><%= link_to '初心者コース', {:controller => "lecture", :action => "beginner"} %></li>
       		</ul>
       	</ul>
       </div>
