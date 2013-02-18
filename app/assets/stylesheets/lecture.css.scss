@@ -1,3 +1,37 @@
 // Place all the styles related to the lecture controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+		
+.menuBtn{
+	background-color: #fff;
+	border: solid 1px #ccc;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.menuBtn:hover{
+	background-color: #dedede;
+}
+
+.section{
+	//display: none;
+	padding: 5px 20px;
+	margin-bottom: 10px;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	margin-top: 40px;
+}
+
+.clear{
+	width:0;
+	clear:both;
+	visibility:hidden;
+	height:0;
+}
+		
+		

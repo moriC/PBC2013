@@ -1,0 +1,36 @@
+<script>
+	$(function(){
+		var $menuBtn = $(".menuBtn");
+		var $section = $(".section");
+		
+		$section.hide();
+		$menuBtn.click(function(){
+			$(this).toggleClass("selected").next().slideToggle("fast");
+			$(this).children("span").toggleClass("icon-plus").toggleClass("icon-minus");
+		});
+		
+	});
+</script>
+<h3>プログラマコース</h3>
+<%= image_tag("breezi_placeit.png", :width => "200px", :class => "left") %>
+<div class="right">
+	<h4>目的</h4>
+	<p>内容がないよー Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis tempora excepturi minima. Ratione ducimus quibusdam laudantium minus magnam iure molestiae.</p>
+</div>
+<br class="clear" />
+
+<h4>事前学習会</h4>
+<dl>
+	<dt class="menuBtn"><span class="icon-plus"></span>デザイナーのためのGit講座</dt>
+	<dd class="section">内容がないよー Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio culpa dolores magnam accusantium rem odio voluptate aliquid incidunt autem!</dd>
+	
+	<dt class="menuBtn"><span class="icon-plus"></span>基礎アルゴリズム</dt>
+	<dd class="section">内容がないよー Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio culpa dolores magnam accusantium rem odio voluptate aliquid incidunt autem!</dd>
+	
+	<dt class="menuBtn"><span class="icon-plus"></span>基礎プログラミング-ライブコーディング(PHP)</dt>
+	<dd class="section">内容がないよー Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio culpa dolores magnam accusantium rem odio voluptate aliquid incidunt autem!</dd>
+	
+	<dt class="menuBtn"><span class="icon-plus"></span>応用プログラミング-ライブコーディング(フレームワーク)</dt>
+	<dd class="section">内容がないよー Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio culpa dolores magnam accusantium rem odio voluptate aliquid incidunt autem!</dd>
+	
+</dl>
