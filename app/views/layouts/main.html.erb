@@ -1,4 +1,4 @@
-d<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>PBC2013</title>
@@ -9,6 +9,12 @@ d<!DOCTYPE html>
     body {
     	padding-top: 60px;
     	padding-bottom: 40px;
+    }
+
+    #btn {
+      margin-top: -2.6px;
+      margin-left: 10px;
+      padding: 1px 5px;
     }
   </style>
 </head>
@@ -24,7 +30,8 @@ d<!DOCTYPE html>
 	    <%= link_to 'PBC2013特設ページ', {:controller => "home", :action => "index"}, {:class => "brand"} %>
 	    <div class="nav-collapse collapse">
         <p class="navbar-text pull-right">
-          Logged in as Username
+          Logged in as <%= link_to current_user.email, {:controller => "home", :action => "index"},  {:class => "navbar-link"} %>
+          <%= link_to "ログアウト", destroy_user_session_path, {:method => :delete, :class => "btn btn-inverse", :id => "btn"} %>
         </p>
 	    </div>
     </div>
