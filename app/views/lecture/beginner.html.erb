@@ -1,0 +1,42 @@
+<script>
+	$(function(){
+		var $menuBtn = $(".menuBtn");
+		var $section = $(".section");
+		
+		$section.hide();
+		$menuBtn.click(function(){
+			$(this).toggleClass("selected").next().slideToggle("fast");
+			$(this).children("span").toggleClass("icon-plus").toggleClass("icon-minus");
+		});
+		
+	});
+</script>
+
+<h3>初心者コース</h3>
+<%= image_tag("breezi_placeitB.png", :width => "200px", :class => "left") %>
+<div class="right">
+		<h4>目的</h4>
+		<p>HTML,CSSに触れ情報発信が簡単に行えることを学ぶ。また一歩先に進みPHPやJavascript,jQueryで何ができるのかを知る。</p>
+</div>
+<br class="clear" />
+
+<h4>事前学習会</h4>
+<br />
+<h5>・デザインコース</h5>
+<dl>
+	<dt class="menuBtn"><span class="icon-plus"></span>Webコーディング基礎(実践)</dt>
+	<dd class="section">HTML,CSSの基礎を学びます。<br />初歩的なタグの説明から簡単なCSSを使った装飾を行います。</dd>
+	<dt class="menuBtn"><span class="icon-plus"></span>デザイン基礎(座学)</dt>
+	<dd class="section">デザインとは何か、色の選び方、フォント,
+	UI UXなどデザインの基礎を学びます。</dd>
+	
+</dl>
+
+<h5>・開発コース</h5>
+<dl>
+	<dt class="menuBtn"><span class="icon-plus"></span>基礎プログラミング-ライブコーディング(PHP)</dt>
+	<dd class="section">HTML,CSSの基礎を学びます。<br />初歩的なタグの説明から簡単なCSSを使った装飾を行います。</dd>
+	
+	<dt class="menuBtn"><span class="icon-plus"></span>基礎アルゴリズム</dt>
+	<dd class="section">HTML,CSSを使ったWeb制作とともにLESS,Emmetを用いた一段上の制作を行います。<br />※HTMLのタグの説明はほとんどしません。</dd>					
+</dl>
