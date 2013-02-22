@@ -1,0 +1,7 @@
+<h3><%= current_user.name %>さんの情報</h3>
+<label>名前</label><span class="input-large uneditable-input"><%= current_user.name %></span>
+<label>学生番号</label><span class="input-large uneditable-input"><%= current_user.number %></span>
+<label>学部</label><span class="input-large uneditable-input"><%= current_user.faculty %></span>
+<label>学科</label><span class="input-large uneditable-input"><%= current_user.department %></span>
+<br>
+<%= link_to "編集する",{:controller => "user", :action => "edit"},{:class => "btn btn-primary"} %>
