@@ -1,3 +1,4 @@
+# coding: utf-8
 class UserController < ApplicationController
   layout 'main'
 
@@ -11,7 +12,8 @@ class UserController < ApplicationController
   def update
   	@user = User.find(params[:id])
   	if @user.update_attributes(params[:user])
-  	  redirect_to @user
+      flash[:notice] = "ユーザ情報更新に成功しました。"
+  	  redirect_to action: :show
   	else
   	  render "/user/edit"
   	end
