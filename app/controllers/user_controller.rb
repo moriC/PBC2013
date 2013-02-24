@@ -7,6 +7,10 @@ class UserController < ApplicationController
 
   def edit
   	@userinfo = User.find(params[:id])
+    if( current_user.id != @userinfo.id )
+      flash[:alert] = "不正なユーザ処理を受け付けたため、正常なユーザ情報画面を表示します"
+      redirect_to action: :show, id: current_user.id
+    end
   end
 
   def update
