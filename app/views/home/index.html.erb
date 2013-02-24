@@ -1,0 +1,20 @@
+<h3>こんにちは、<%= current_user.name %>さん</h3>
+<table class="table table-bordered">
+<tr>
+	<td>説明会</td>
+	<td></td>
+</tr>
+<tr>
+	<td>申し込み状況</td>
+	<td></td>
+</tr>
+<tr>
+	<td>申し込みコース</td>
+	<td></td>
+</tr>
+</table>
+<% if OrientationMeeting.exists?(:user_id => current_user.id, :state => 1, ) %>
+  説明会を予約済みです
+<% else %>
+  説明会の予約を取ってください
+<% end %>
