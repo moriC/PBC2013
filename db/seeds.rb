@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 FactoryGirl.create :user
 FactoryGirl.create :orientation_meeting
+FactoryGirl.create :orientation
+FactoryGirl.create :orientation_day

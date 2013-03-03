@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @orientation.user_id %>
+</p>
+
+<p>
+  <b>Meeting:</b>
+  <%= @orientation.meeting_id %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @orientation.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_orientation_path(@orientation) %> |
+<%= link_to 'Back', orientations_path %>

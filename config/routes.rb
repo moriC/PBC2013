@@ -1,4 +1,7 @@
 PBC2013::Application.routes.draw do
+  resources :orientations
+
+
   devise_for :users
 
   # The priority is based upon order of creation:

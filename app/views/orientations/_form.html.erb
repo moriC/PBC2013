@@ -1,0 +1,23 @@
+<%= form_for(@orientation) do |f| %>
+  <% if @orientation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orientation.errors.count, "error") %> prohibited this orientation from being saved:</h2>
+
+      <ul>
+      <% @orientation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% @orientation_data.each do |o| %>
+          <%= o.meeting_date %>
+          <%= o.meeting_time.to_s(:simple_time) %>〜
+          <%= o.meeting_place %>
+          <%= o.max_number %>
+          <%= f.radio_button 'meeting_id', o.id, {} %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
