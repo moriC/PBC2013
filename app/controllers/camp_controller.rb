@@ -5,4 +5,7 @@ class CampController < ApplicationController
   
   def entry
   end
+
+  def orientation
+  end
 end
