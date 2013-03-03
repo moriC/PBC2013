@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224130030) do
+ActiveRecord::Schema.define(:version => 20130303090341) do
+
+  create_table "orientation_days", :force => true do |t|
+    t.date     "meeting_date"
+    t.time     "meeting_time"
+    t.string   "meeting_place"
+    t.integer  "max_number"
+    t.integer  "state"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "orientation_meetings", :force => true do |t|
     t.integer  "user_id"
