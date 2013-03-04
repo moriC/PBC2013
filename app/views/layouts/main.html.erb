@@ -42,7 +42,14 @@
     <div class="span3">
       <div class="well sidebar-nav">
       	<ul class="nav nav-list">
-          <li><%= link_to '説明会予約', {:controller => "orientations", :action => "new"} %></li>
+          <li>
+            <% if Orientation.where(:user_id => current_user.id).exists? %>
+              <% @orientation = Orientation.find(:all, :conditions => {:user_id => current_user.id}) %>
+              <%= link_to '説明会予約', edit_orientation_path(@orientation) %>
+            <% else %>
+              <%= link_to '説明会予約', new_orientation_path %>
+            <% end %>
+          </li>
           <li><%= link_to '合宿申し込み', {:controller => "camp", :action => "entry"} %></li>
           <li><%= link_to '合宿概要', {:controller => "camp", :action => "about"} %></li>
           <hr>
