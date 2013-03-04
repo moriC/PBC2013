@@ -10,13 +10,29 @@
       </ul>
     </div>
   <% end %>
-  <% @orientation_data.each do |o| %>
-          <%= o.meeting_date %>
-          <%= o.meeting_time.to_s(:simple_time) %>〜
-          <%= o.meeting_place %>
-          <%= o.max_number %>
-          <%= f.radio_button 'meeting_id', o.id, {} %>
-  <% end %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>日付</th>
+        <th>時間</th>
+        <th>場所</th>
+        <th>定員</th>
+        <th>予約</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @orientation_data.each do |o| %>
+      <tr>
+        <td><%= o.meeting_date.to_s(:date_ja) %></td>
+        <td><%= o.meeting_time.to_s(:simple_time) %>〜</td>
+        <td><%= o.meeting_place %></td>
+        <td><%= o.max_number %></td>
+        <td><%= f.radio_button 'meeting_id', o.id, {} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
