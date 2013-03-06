@@ -2,7 +2,17 @@
 <table class="table table-bordered">
 <tr>
 	<td width="150px">説明会</td>
-	<td></td>
+	<td>
+	  <% if Orientation.where(:user_id => current_user.id).exists? %>
+        <% orientation = Orientation.find(:first, :conditions => {:user_id => current_user.id}) %>
+        説明会を次の日程で予約済みです。<br>
+        日時：<%= orientation.meeting.meeting_date.to_s(:date_ja) %>
+        時間：<%= orientation.meeting.meeting_time.to_s(:simple_time) %>〜
+        場所：<%= orientation.meeting.meeting_place %>
+	  <% else %>
+	    説明会の予約を取ってください！
+	  <% end %>
+	</td>
 </tr>
 <tr>
 	<td>申し込み状況</td>
@@ -13,8 +23,3 @@
 	<td></td>
 </tr>
 </table>
-<% if OrientationMeeting.exists?(:user_id => current_user.id, :state => 1, ) %>
-  説明会を予約済みです
-<% else %>
-  説明会の予約を取ってください
-<% end %>

@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-    <% @orientation_data.each do |o| %>
+    <% @meeting.each do |o| %>
       <tr>
         <td><%= o.meeting_date.to_s(:date_ja) %></td>
         <td><%= o.meeting_time.to_s(:simple_time) %>〜</td>

@@ -26,7 +26,7 @@ class OrientationsController < ApplicationController
   # GET /orientations/new.json
   def new
     @orientation = Orientation.new
-    @orientation_data = OrientationDay.all
+    @meeting = Meeting.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @orientation }
@@ -36,7 +36,7 @@ class OrientationsController < ApplicationController
   # GET /orientations/1/edit
   def edit
     @orientation = Orientation.find(params[:id])
-    @orientation_data = OrientationDay.all
+    @meeting = Meeting.all
   end
 
   # POST /orientations
