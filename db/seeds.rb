@@ -8,4 +8,4 @@
 FactoryGirl.create :user
 FactoryGirl.create :orientation_meeting
 FactoryGirl.create :orientation
-FactoryGirl.create :orientation_day
+FactoryGirl.create :meeting

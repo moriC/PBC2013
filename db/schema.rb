@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303152726) do
+ActiveRecord::Schema.define(:version => 20130306144517) do
 
-  create_table "orientation_days", :force => true do |t|
+  create_table "meetings", :force => true do |t|
     t.date     "meeting_date"
     t.time     "meeting_time"
     t.string   "meeting_place"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(:version => 20130303152726) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "orientation_meetings", ["user_id"], :name => "index_orientation_meetings_on_user_id"
 
   create_table "orientations", :force => true do |t|
     t.integer  "user_id"
