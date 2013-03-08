@@ -1,3 +1,4 @@
+# coding: utf-8
 class OrientationsController < ApplicationController
    layout 'main'
   # GET /orientations
@@ -45,14 +46,12 @@ class OrientationsController < ApplicationController
     @orientation = Orientation.new(params[:orientation])
     @orientation.user_id = current_user.id
     @orientation.state = 1
-    respond_to do |format|
-      if @orientation.save
-        format.html { redirect_to @orientation, notice: 'Orientation was successfully created.' }
-        format.json { render json: @orientation, status: :created, location: @orientation }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @orientation.errors, status: :unprocessable_entity }
-      end
+    if @orientation.save
+      flash[:notice] = "予約手続き完了しました！"
+      redirect_to :controller => 'home'
+    else
+      format.html { render action: "new" }
+      format.json { render json: @orientation.errors, status: :unprocessable_entity }
     end
   end
 
@@ -60,15 +59,12 @@ class OrientationsController < ApplicationController
   # PUT /orientations/1.json
   def update
     @orientation = Orientation.find(params[:id])
-
-    respond_to do |format|
-      if @orientation.update_attributes(params[:orientation])
-        format.html { redirect_to @orientation, notice: 'Orientation was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @orientation.errors, status: :unprocessable_entity }
-      end
+    if @orientation.update_attributes(params[:orientation])
+      flash[:notice] = '予約内容を更新しました！'
+      redirect_to :controller => 'home'
+    else
+      format.html { render action: "edit" }
+      format.json { render json: @orientation.errors, status: :unprocessable_entity }
     end
   end
 

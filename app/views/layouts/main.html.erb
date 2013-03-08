@@ -44,7 +44,7 @@
       	<ul class="nav nav-list">
           <li>
             <% if Orientation.where(:user_id => current_user.id).exists? %>
-              <% @orientation = Orientation.find(:all, :conditions => {:user_id => current_user.id}) %>
+              <% @orientation = Orientation.find(:first, :conditions => {:user_id => current_user.id}) %>
               <%= link_to '説明会予約', edit_orientation_path(@orientation) %>
             <% else %>
               <%= link_to '説明会予約', new_orientation_path %>
