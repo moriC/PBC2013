@@ -64,7 +64,7 @@ PBC2013::Application.routes.draw do
   resources :home
   resources :user do
     collection do
-      get :edit
+      post :edit
       get :update
       get :show
     end
