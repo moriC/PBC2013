@@ -22,7 +22,14 @@
 </tr>
 <tr>
 	<td>申し込み状況</td>
-	<td></td>
+	<td>
+    <% if Camp.where(:user_id => current_user.id).exists? %>
+        <% camp = Camp.find(:first, :conditions => {:user_id => current_user.id}) %>
+        [<%= camp.cource_id %>]で申し込み済みです。
+	  <% else %>
+	    申し込み手続きをとってください！
+	  <% end %>
+	</td>
 </tr>
 <tr>
 	<td>申し込みコース</td>

@@ -1,1 +1,17 @@
 <h3>PBC2013の申し込み手続き</h3>
+<%= form_for @camp, :url => {:action => 'create'} do |c| %>
+<table class="table table-bordered">
+<tr>
+  <td>申込者</td>
+  <td><%= current_user.name %></td>
+</tr>
+<tr>
+</tr>
+  <td>申し込みコース</td>
+  <td><%= select :camp, :cource_id, {"プログラマーコース" => 1, 
+  	"システムデザインコース" => 2, "Webデザインコース" => 3, "初心者コース" => 4} %></td>
+</table>
+<div class="actions">
+    <%= c.submit(:class => "btn btn-primary") %>
+  </div>
+<% end %>
