@@ -9,3 +9,7 @@ FactoryGirl.create :user
 FactoryGirl.create :orientation_meeting
 FactoryGirl.create :orientation
 FactoryGirl.create :meeting
+
+Domain::cource.each do |c|
+  FactoryGirl.create :cource , c
+end
