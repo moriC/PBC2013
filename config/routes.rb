@@ -69,11 +69,10 @@ PBC2013::Application.routes.draw do
       get :show
     end
   end
-  resources :camp do
+  resources :camps do
     collection do
       get :orientation
       get :about
-      get :entry
     end
   end
   resources :lecture do

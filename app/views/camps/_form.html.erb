@@ -1,0 +1,15 @@
+<%= form_for(@camp) do |c| %>
+<table class="table table-bordered">
+<tr>
+  <td>申込者</td>
+  <td><%= current_user.name %></td>
+</tr>
+<tr>
+</tr>
+  <td>申し込みコース</td>
+  <td><%= collection_select(:camp, :cource_id, @cource, :id, :cource_name) %></td>
+</table>
+<div class="actions">
+    <%= c.submit(:class => "btn btn-primary") %>
+  </div>
+<% end %>

@@ -50,8 +50,15 @@
               <%= link_to '説明会予約', new_orientation_path %>
             <% end %>
           </li>
-          <li><%= link_to '合宿申し込み', {:controller => "camp", :action => "entry"} %></li>
-          <li><%= link_to '合宿概要', {:controller => "camp", :action => "about"} %></li>
+          <li>
+            <% if Camp.where(:user_id => current_user.id).exists? %>
+              <% @camp = Camp.find(:first, :conditions => {:user_id => current_user.id}) %>
+              <%= link_to '合宿申し込み', edit_camp_path(@camp) %>
+            <% else %>
+              <%= link_to '合宿申し込み', new_camp_path %>
+            <% end %>
+           </li>
+          <li><%= link_to '合宿概要', {:controller => "camps", :action => "about"} %></li>
           <hr>
       		<li>開講部門紹介</li>
       		<ul class="nav nav-list">
